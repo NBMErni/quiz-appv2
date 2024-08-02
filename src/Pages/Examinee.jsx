@@ -77,62 +77,60 @@ function Examinee() {
   return (
     <>
       <Header />
-      <div className="mx-5 mt-24 flex flex-col md:flex-row md:justify-center md:gap-24 md:mt-24">
-        <div className="flex md:justify-between flex-col">
-          <div className="">
-            <h1 className="mb-12 text-gray-500 italic md:text-xl">
-              Question {currentQuestionIndex + 1} out of {totalQuestions}
-            </h1>
-            <h1 className="text-xl font-extrabold mb-12 md:text-3xl">
-              {currentQuestion.question}
-            </h1>
+      <div>
+        <h1 className="text-center my-5">BreadCrumbs</h1>
+      </div>
+
+      <div className="h-[150px] flex items-center bg-amber-400 py-5 lg:mx-96 mb-10">
+        <h1 className="text-white mx-3 text-xl font-  ">
+          An interface design application that runs in the browswer with
+          team-based collaborative design projects
+        </h1>
+      </div>
+
+      <div className="flex md:flex-row flex-col ">
+        <div className=" bg-amber-400  mx-10 rounded-md mb-5 ">
+          <div className="ml-1">
+            <h1 className="text-white text-xl">A.</h1>
           </div>
-          <div className="flex w-full lg:mb-10">
-            <ProgressBar current={progressCurrent} total={progressTotal} />
+          <div className="flex">
+            <h1 className=" text-white pb-5 w-full text-center rounded-md text-3xl font-bold tracking-wider">
+              FIGMA
+            </h1>
           </div>
         </div>
 
-        <div className="flex flex-col w-full md:w-[800px] lg:1/4">
-          {currentQuestion.listOfPossibleAnswers.map((answer, i) => {
-            const isSelected = selectedAnswerIndex === i;
-            const isCorrect = i === correctAnswerIndex;
-            const borderColor = isSelected
-              ? isCorrect
-                ? "border-4 border-green-500"
-                : "border-4 border-red-500"
-              : "border-gray-300";
+        <div className=" bg-gray-400  mx-10 rounded-md mb-5">
+          <div className="ml-1">
+            <h1 className="text-black text-xl">B.</h1>
+          </div>
+          <div className="flex">
+            <h1 className=" text-black pb-5 w-full text-center rounded-md text-3xl font-bold tracking-wider">
+              FIGMA
+            </h1>
+          </div>
+        </div>
 
-            const letterColor = isSelected
-              ? isCorrect
-                ? "bg-green-500 text-white text-green-500"
-                : "bg-red-500 text-white text-red-500"
-              : "text-gray-700";
+        <div className=" bg-gray-400 mx-10 rounded-md mb-5">
+          <div className="ml-1">
+            <h1 className="text-black text-xl">C.</h1>
+          </div>
+          <div className="flex">
+            <h1 className=" text-black pb-5 w-full text-center rounded-md text-3xl font-bold tracking-wider">
+              FIGMA
+            </h1>
+          </div>
+        </div>
 
-            const answerColor = isSelected
-              ? isCorrect
-                ? "text-green-500"
-                : "text-red-500"
-              : "text-gray-700";
-
-            return (
-              <div
-                key={i}
-                className={`bg-white shadow-xl rounded-md mb-5 cursor-pointer border-2 ${borderColor}`}
-                onClick={() => handleAnswerClick(i)}
-              >
-                <div className="py-4 flex items-center gap-[80px] font-extrabold">
-                  <div
-                    className={`ml-5 py-3 px-4 rounded-md bg-gray-200 font-extrabold ${letterColor}`}
-                  >
-                    {String.fromCharCode(65 + i)}
-                  </div>
-                  <div className={`font-extrabold ${answerColor}`}>
-                    {answer}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        <div className=" bg-gray-400  mx-10 rounded-md">
+          <div className="ml-1">
+            <h1 className="text-black  text-xl">D.</h1>
+          </div>
+          <div className="flex">
+            <h1 className=" text-black pb-5 w-full text-center rounded-md text-3xl font-bold tracking-wider">
+              FIGMA
+            </h1>
+          </div>
         </div>
       </div>
     </>
@@ -140,3 +138,62 @@ function Examinee() {
 }
 
 export default Examinee;
+
+// <div className="mx-5 mt-24 flex flex-col md:flex-row md:justify-center md:gap-24 md:mt-24">
+// <div className="flex md:justify-between flex-col">
+//   <div className="">
+//     <h1 className="mb-12 text-gray-500 italic md:text-xl">
+//       Question {currentQuestionIndex + 1} out of {totalQuestions}
+//     </h1>
+//     <h1 className="text-xl font-extrabold mb-12 md:text-3xl">
+//       {currentQuestion.question}
+//     </h1>
+//   </div>
+//   <div className="flex w-full lg:mb-10">
+//     <ProgressBar current={progressCurrent} total={progressTotal} />
+//   </div>
+// </div>
+
+// <div className="flex flex-col w-full md:w-[800px] lg:1/4">
+//   {currentQuestion.listOfPossibleAnswers.map((answer, i) => {
+//     const isSelected = selectedAnswerIndex === i;
+//     const isCorrect = i === correctAnswerIndex;
+//     const borderColor = isSelected
+//       ? isCorrect
+//         ? "border-4 border-green-500"
+//         : "border-4 border-red-500"
+//       : "border-gray-300";
+
+//     const letterColor = isSelected
+//       ? isCorrect
+//         ? "bg-green-500 text-white text-green-500"
+//         : "bg-red-500 text-white text-red-500"
+//       : "text-gray-700";
+
+//     const answerColor = isSelected
+//       ? isCorrect
+//         ? "text-green-500"
+//         : "text-red-500"
+//       : "text-gray-700";
+
+//     return (
+//       <div
+//         key={i}
+//         className={`bg-white shadow-xl rounded-md mb-5 cursor-pointer border-2 ${borderColor}`}
+//         onClick={() => handleAnswerClick(i)}
+//       >
+//         <div className="py-4 flex items-center gap-[80px] font-extrabold">
+//           <div
+//             className={`ml-5 py-3 px-4 rounded-md bg-gray-200 font-extrabold ${letterColor}`}
+//           >
+//             {String.fromCharCode(65 + i)}
+//           </div>
+//           <div className={`font-extrabold ${answerColor}`}>
+//             {answer}
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   })}
+// </div>
+// </div>
